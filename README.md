@@ -23,6 +23,7 @@ Make sure you have [pip](https://pypi.org/project/pip/) and [Python3.8 or above 
 ## How to Use :question:
 
 ### :arrow_forward: Steps to Run the project
+1. Go to the [weatherstack](https://weatherstack.com/) website and create a free account. With free account you have 250 requests/month
 1. Clone the repository in your machine.
 2. Open a terminal in the repository root folder.
 3. Install all the dependencies for the project from the requirements.txt file by using the command. 
