@@ -14,4 +14,8 @@ weather-gui
 ```bash
 pip install -r requirements.txt
 ```
+Make sure you have [pip](https://pypi.org/project/pip/) and [Python3.8 or above version](https://www.python.org/) installed on your computer.
 
+## :construction: Working Project
+<p align="center"> Watch the demo here :point_down:</p>
+<p align="center"><img src="./src/weather-demo.gif" alt="demo" />&nbsp;</p>
