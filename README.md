@@ -27,13 +27,13 @@ Make sure you have [pip](https://pypi.org/project/pip/) and [Python3.8 or above 
 2. Login in on your [weatherstack](https://weatherstack.com/) account and copy Your API Access Key.
 3. Clone the repository in your machine.
 4. Open <b>weather-gui.py</b> file and paste your API Access Key in the constante variable <b>API_ACCESS_KEY</b>
-2. Open a terminal in the repository root folder.
-3. Install all the dependencies for the project from the requirements.txt file by using the command. 
+5. Open a terminal in the repository root folder.
+6. Install all the dependencies for the project from the requirements.txt file by using the command. 
 ```bash
 pip install -r requirements.txt
 ```
-4. Run the application.
-5. To run the application, run the following command in the terminal:
+7. Run the application.
+8. To run the application, run the following command in the terminal:
 ```bash
 python weather-gui.py
 ```
