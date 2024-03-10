@@ -14,4 +14,35 @@ weather-gui
 ```bash
 pip install -r requirements.txt
 ```
+Make sure you have [pip](https://pypi.org/project/pip/) and [Python3.8 or above version](https://www.python.org/) installed on your computer.
 
+## :construction: Working Project
+<p align="center"> Watch the demo here :point_down:</p>
+<p align="center"><img src="./src/weather-demo.gif" alt="demo" />&nbsp;</p>
+
+## How to Use :question:
+
+### :arrow_forward: Steps to Run the project
+1. Clone the repository in your machine.
+2. Open a terminal in the repository root folder.
+3. Install all the dependencies for the project from the requirements.txt file by using the command. 
+```bash
+pip install -r requirements.txt
+```
+4. Run the application.
+5. To run the application, run the following command in the terminal:
+```bash
+python weather-gui.py
+```
+
+## 🚀 Technologies
+#### All the code was built in [Python3](https://www.python.org/). With a blend of my first experience with the library [PyQt5](https://pypi.org/project/PyQt5/).
+
+<br>
+
+## :books: Supporting Modules
+- QtGUI
+- QtCore
+- QtWidgets
+- Requests
+- Pillow
