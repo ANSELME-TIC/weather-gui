@@ -18,6 +18,7 @@ from io import BytesIO
 
 URL = 'http://api.weatherstack.com/current'
 
+# paste your key here
 API_ACCESS_KEY = ''
 
 class Ui_MainWindow(object):
