@@ -24,7 +24,9 @@ Make sure you have [pip](https://pypi.org/project/pip/) and [Python3.8 or above 
 
 ### :arrow_forward: Steps to Run the project
 1. Go to the [weatherstack](https://weatherstack.com/) website and create a free account. With free account you have 250 requests/month
-1. Clone the repository in your machine.
+2. Login in on your [weatherstack](https://weatherstack.com/) account and copy Your API Access Key.
+3. Clone the repository in your machine.
+4. Open <b>weather-gui.py</b> file and paste your API Access Key in the constante variable <b>API_ACCESS_KEY</b>
 2. Open a terminal in the repository root folder.
 3. Install all the dependencies for the project from the requirements.txt file by using the command. 
 ```bash
@@ -37,7 +39,7 @@ python weather-gui.py
 ```
 
 ## 🚀 Technologies
-#### All the code was built in [Python3](https://www.python.org/). With a blend of my first experience with the library [PyQt5](https://pypi.org/project/PyQt5/).
+#### All the code was built in [Python3](https://www.python.org/). With a blend with the library [PyQt5](https://pypi.org/project/PyQt5/).
 
 <br>
 
@@ -47,3 +49,10 @@ python weather-gui.py
 - QtWidgets
 - Requests
 - Pillow
+
+## 📙Documentation
+- [library PyQT5 documentation](https://www.riverbankcomputing.com/static/Docs/PyQt5/)
+- [weatherstack API documentation](https://weatherstack.com/documentation)
+  
+## 👨🏾‍💻Author
+- [Anselme](https://github.com/ANSELME-TIC)
