@@ -23,10 +23,11 @@ API_ACCESS_KEY = ''
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
+        self.MainWindow = MainWindow
         self.params = {}
-        MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(429, 296)
-        MainWindow.setMaximumSize(QtCore.QSize(435, 296))
+        self.MainWindow.setObjectName("MainWindow")
+        self.MainWindow.resize(429, 296)
+        self.MainWindow.setMaximumSize(QtCore.QSize(435, 296))
         MainWindow.setWindowIcon(QtGui.QIcon('../weather-gui/src/weather.svg'))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(435, 296))
@@ -432,9 +433,9 @@ class Ui_MainWindow(object):
         self.weatherMomentLabel.setText(_translate("MainWindow", ""))
         self.WeatherCelciusLabel.setText(_translate("MainWindow", ""))
         self.windLabel.setText(_translate("MainWindow", ""))
-        self.precipLabel.setText(_translate("MainWindow", "Precip : "))
-        self.presureLabel.setText(_translate("MainWindow", "Pressure : "))
-        self.humidityLabel.setText(_translate("MainWindow", "Humidity : "))
+        self.precipLabel.setText(_translate("MainWindow", ""))
+        self.presureLabel.setText(_translate("MainWindow", ""))
+        self.humidityLabel.setText(_translate("MainWindow", ""))
         self.searchField.setPlaceholderText(_translate("MainWindow", "Enter City or Country name..."))
         self.btnSubmit.setText(_translate("MainWindow", "Submit"))
 
@@ -442,7 +443,6 @@ class Ui_MainWindow(object):
     def updateWeatherData(self, api_response):
         current_weather = api_response['current']
         location = api_response['location']
-        
         self.locationLabelName.setText(location['name'] + ',' + location['country'])
         self.iconeLabel.setPixmap(self.imageRequest(current_weather['weather_icons'][0]))
         self.weatherMomentLabel.setText(current_weather['weather_descriptions'][0])
@@ -454,11 +454,14 @@ class Ui_MainWindow(object):
     
     # use to  fetch weather
     def fetchWeatherData(self, query):
-        self.params['access_key'] = API_ACCESS_KEY
-        self.params['query'] = query
-        api_result = get(url=URL, params=self.params)
-        api_response = api_result.json()
-        self.updateWeatherData(api_response)
+        try:
+            self.params['access_key'] = API_ACCESS_KEY
+            self.params['query'] = query
+            api_result = get(url=URL, params=self.params)
+            api_response = api_result.json()
+            self.updateWeatherData(api_response)
+        except Exception as e :
+           self.show_warning_dialog()
 
     # use to detect user weather thanks to his IP address
     def autoDetectTemperature(self):
@@ -479,6 +482,32 @@ class Ui_MainWindow(object):
         pixmap.loadFromData(image_data)
         return pixmap
     
+    # function to show pop pup
+    def show_warning_dialog(self):
+        message = "Invalid API Access Key"
+        dialog = WarningDialog(message, self.MainWindow)
+        dialog.exec_()
+
+# pop pup class
+class WarningDialog(QtWidgets.QDialog):
+    def __init__(self,message,parent):
+        super(WarningDialog,self).__init__(parent=parent)
+        self.setWindowTitle("Warning")
+        self.resize(300, 100)
+
+        self.message = message
+
+        self.init_ui()
+
+    def init_ui(self):
+        self.button_ok = QtWidgets.QPushButton("OK", self)
+        self.button_ok.clicked.connect(self.accept)
+
+        self.layout = QtWidgets.QVBoxLayout()
+        self.layout.addWidget(QtWidgets.QLabel(self.message))
+        self.layout.addWidget(self.button_ok)
+
+        self.setLayout(self.layout)
 
 
     
